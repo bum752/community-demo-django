@@ -19,4 +19,4 @@ deploy:
     repo: bum752/community-demo-django
   run:
     - "python manage.py migrate"
-    - restart
+    - "python manage.py runserver"
