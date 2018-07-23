@@ -11,10 +11,11 @@ before_install:
 - tar xvf secrets.tar
 deploy:
   provider: heroku
+  skip_cleanup: true
   api_key:
     secure: JZOx1Tsk4PbP++hY7KWlNp7pGGDIxrx9snWIvEEuPUv+JGTh9CJOjPkaAuOk6xtD5cT9fViSoZ3RKc2ymkkSh1J3RmRyG2Fxv+e4U+sX7/GVQmgGZLjUQQyZF1c0cDMXsc3oRGFWJBd+fQCcYpd2qtN8uHGXh+x+IVM2AOkqYZyYaidvGXGuK+EW9mYaJDjcui3PtWx3FpMfTIZU9rUjkEeZUg+crd+QsP3Pc19W531te2Wv1b5hHmur2JtqBfxlH87EJ1IWqW2lUgDKySTPgsMFaycP9XSzqwAc7dvzkmmC7BkrUF5OiDU7n8Yt3uNxQvfZpKY8AP7irQM8PK+Ss0qRzW9noyp3Uhv0Ie7I6/Ce3GMEobGFqAMRKN8kXjjf2MipAaDEO/0P9HrK5zaQzi5oZxBnMmSxrLILL6+kBrM5QGlSSSSgmd9KlefMwai81ssFVWjBffRP1xi4hIJUY5QZ10zl+/FbqGewVSB0hZ1KEPqYZqZf+1fB69MgGJPaASPkTNrzPYHyZR6VHAKh2DfocIHH4PqoO1eEhNT5dO9l/lixcB3VfZZ7j1j8kuakT64OJ33yHrTSp4H+FhVqu+q/W2StoEJCihgTuDjaSkS+p6kZtVZsdrdpg7PKW8AYZ5eL3PT3yd4npd4WFXPGWchz4cVLG0QfgrkR+9splYQ=
   app: community-demo-django
-  on:
+  on: production
     repo: bum752/community-demo-django
   run:
     - "python manage.py migrate"
