@@ -4,6 +4,8 @@ python:
 install:
 - pip install -r requirements.txt
 - pip install psycopg2-binary
+services:
+- postgresql
 addons:
   postgresql: "10.4"
 script:
