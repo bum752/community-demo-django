@@ -31,7 +31,7 @@ SECRET_KEY = secrets_base['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['.herokuapp.com']
 
 
 # Application definition
@@ -170,10 +170,9 @@ CORS_ALLOW_HEADERS = (
     'origin',
     'authorization',
     'X-CSRFToken',
-    # 'Set-Cookie',
+    'Set-Cookie',
 )
 
-# CSRF_COOKIE_DOMAIN = 'firebaseapp.com'
 # CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 # CSRF_COOKIE_SECURE = True
 # CSRF_COOKIE_HTTPONLY = True
