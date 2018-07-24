@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'community',
+        'NAME': secrets_base['HEROKU_POSTGRESQL_DATABASE'],
         'USER': secrets_base['HEROKU_POSTGRESQL_USER'],
         'PASSWORD': secrets_base['HEROKU_POSTGRESQL_PASSWORD'],
         'HOST': secrets_base['HEROKU_POSTGRESQL_HOST'],
