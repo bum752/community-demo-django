@@ -98,7 +98,7 @@ if 'TRAVIS' in os.environ:
             'USER': 'postgres',
             'PASSWORD': '',
             'HOST': 'localhost',
-            'PORT': ''
+            'PORT': '5432'
         }
     }
 else:
@@ -112,7 +112,7 @@ else:
             'PORT': secrets_base['HEROKU_POSTGRESQL_PORT']
         }
     }
-    
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
