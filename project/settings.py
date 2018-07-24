@@ -173,7 +173,7 @@ CORS_ALLOW_HEADERS = (
     # 'Set-Cookie',
 )
 
-CSRF_COOKIE_DOMAIN = 'firebaseapp.com'
+# CSRF_COOKIE_DOMAIN = 'firebaseapp.com'
 # CSRF_COOKIE_NAME = 'XSRF-TOKEN'
 # CSRF_COOKIE_SECURE = True
 # CSRF_COOKIE_HTTPONLY = True
