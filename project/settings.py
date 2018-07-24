@@ -31,7 +31,7 @@ SECRET_KEY = secrets_base['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.my-demo.xyz', '.herokuapp.com']
+ALLOWED_HOSTS = ['.my-demo.xyz']
 
 
 # Application definition
@@ -158,7 +158,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # CORS
 # CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = (
-    'community-demo-react.firebaseapp.com',
+    '.my-demo.xyz',
 )
 
 CORS_ALLOW_CREDENTIALS = True
@@ -174,7 +174,7 @@ CORS_ALLOW_HEADERS = (
 )
 
 CSRF_TRUSTED_ORIGINS = (
-    'community-demo-react.firebaseapp.com',
+    '.my-demo.xyz',
 )
 
 # CSRF_COOKIE_NAME = 'XSRF-TOKEN'
