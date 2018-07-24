@@ -90,16 +90,29 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': secrets_base['HEROKU_POSTGRESQL_DATABASE'],
-        'USER': secrets_base['HEROKU_POSTGRESQL_USER'],
-        'PASSWORD': secrets_base['HEROKU_POSTGRESQL_PASSWORD'],
-        'HOST': secrets_base['HEROKU_POSTGRESQL_HOST'],
-        'PORT': secrets_base['HEROKU_POSTGRESQL_PORT']
+if 'TRAVIS' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'travisci',
+            'USER': 'postgres',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': ''
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': secrets_base['HEROKU_POSTGRESQL_DATABASE'],
+            'USER': secrets_base['HEROKU_POSTGRESQL_USER'],
+            'PASSWORD': secrets_base['HEROKU_POSTGRESQL_PASSWORD'],
+            'HOST': secrets_base['HEROKU_POSTGRESQL_HOST'],
+            'PORT': secrets_base['HEROKU_POSTGRESQL_PORT']
+        }
+    }
+    
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
