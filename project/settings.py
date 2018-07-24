@@ -93,23 +93,23 @@ WSGI_APPLICATION = 'project.wsgi.application'
 if 'TRAVIS' in os.environ:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'ENGINE': 'django.db.backends.mysql',
             'NAME': 'travisci',
-            'USER': 'postgres',
+            'USER': 'travis',
             'PASSWORD': '',
             'HOST': 'localhost',
-            'PORT': 5432
+            'PORT': 3306
         }
     }
 else:
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': secrets_base['HEROKU_POSTGRESQL_DATABASE'],
-            'USER': secrets_base['HEROKU_POSTGRESQL_USER'],
-            'PASSWORD': secrets_base['HEROKU_POSTGRESQL_PASSWORD'],
-            'HOST': secrets_base['HEROKU_POSTGRESQL_HOST'],
-            'PORT': secrets_base['HEROKU_POSTGRESQL_PORT']
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': secrets_base['PYTHONANYWHERE_MYSQL_DATABASE'],
+            'USER': secrets_base['PYTHONANYWHERE_MYSQL_USER'],
+            'PASSWORD': secrets_base['PYTHONANYWHERE_MYSQL_PASSWORD'],
+            'HOST': secrets_base['PYTHONANYWHERE_MYSQL_HOST'],
+            'PORT': secrets_base['PYTHONANYWHERE_MYSQL_PORT']
         }
     }
 
