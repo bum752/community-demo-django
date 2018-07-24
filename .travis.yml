@@ -1,17 +1,17 @@
 language: python
 python:
-  - '3.6'
+- '3.6'
 install:
-  - pip install -r requirements.txt
+- pip install -r requirements.txt
 services:
-  - postgresql
+- postgresql
 script:
-  - python manage.py test
+- python manage.py test
 before_install:
-  - openssl aes-256-cbc -K $encrypted_996b9d9f09fe_key -iv $encrypted_996b9d9f09fe_iv
+- openssl aes-256-cbc -K $encrypted_996b9d9f09fe_key -iv $encrypted_996b9d9f09fe_iv
   -in secrets.tar.enc -out secrets.tar -d
-  - tar xvf secrets.tar
-  - psql -c 'create database travis_ci_test;' -U postgres
+- tar xvf secrets.tar
+- psql -c 'create database travis_ci_test;' -U postgres
 deploy:
   provider: heroku
   skip_cleanup: true
@@ -21,5 +21,5 @@ deploy:
   on:
     repo: bum752/community-demo-django
   run:
-    - python manage.py migrate
-    - restart
+  - python manage.py migrate
+  - restart
