@@ -2,3 +2,5 @@
 secrets.tar
 
 static
+
+db.sqlite3

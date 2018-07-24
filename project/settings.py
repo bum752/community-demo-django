@@ -170,7 +170,11 @@ CORS_ALLOW_HEADERS = (
     'origin',
     'authorization',
     'X-CSRFToken',
-    'Set-Cookie',
+    # 'Set-Cookie',
+)
+
+CSRF_TRUSTED_ORIGINS = (
+    'community-demo-react.firebaseapp.com',
 )
 
 # CSRF_COOKIE_NAME = 'XSRF-TOKEN'
