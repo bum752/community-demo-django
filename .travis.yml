@@ -7,7 +7,7 @@ install:
 services:
 - postgresql
 addons:
-  postgresql: "10.4"
+  postgresql: "10"
 script:
 - python manage.py test
 before_install:
