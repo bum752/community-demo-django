@@ -11,6 +11,8 @@ before_install:
 - openssl aes-256-cbc -K $encrypted_996b9d9f09fe_key -iv $encrypted_996b9d9f09fe_iv
   -in secrets.tar.enc -out secrets.tar -d
 - tar xvf secrets.tar
+- psql -c "create user test with createuser password 'test';"
+- psql -c 'alter user test createdb;'
 - psql -c 'create database travis_ci_test;' -U postgres
 deploy:
   provider: heroku
